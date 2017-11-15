@@ -1,6 +1,8 @@
 ---
 title: Hello Hexo | 小记博客迁移
 date: 2017-10-21 20:08:30
+categories: 杂谈
+tags: hexo
 ---
 ## 闲话
 

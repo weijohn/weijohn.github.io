@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="Wei John, Hexo, NexT" />
+  <meta name="keywords" content="Linux,Tomcat,SSL,TSL,HTTPS,签名,证书,秘钥," />
 
 
 
@@ -79,17 +79,18 @@
 
 
 
-<meta name="description" content="爱编程，爱晚起，偶尔也忙到深夜，喜欢学习，努力工作，也享受生活，我酷爱技术，崇尚简单的快乐和幸福，我和你一样，为理想而奋斗。It’s me —— Wei John">
-<meta property="og:type" content="website">
-<meta property="og:title" content="It&#39;s me">
-<meta property="og:url" content="https://weijohn.me/about/index.html">
+<meta name="description" content="Tomcat 8 SSL/TSL(https证书)配置最近公司要求在测试服务器上配置https访问方式。由于测试服务器，先使用java自签名证书测试一下，之后改成阿里云申请的免费证书，选择jks格式证书，修改keystoreFile、keystorePass即可。配置方法主要参考Tomcat官方文档。">
+<meta name="keywords" content="Linux,Tomcat,SSL,TSL,HTTPS,签名,证书,秘钥">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Linux Tomcat 8 SSL&#x2F;TSL(https证书)配置">
+<meta property="og:url" content="https://weijohn.me/2017/10/21/Linux-Tomcat-8-SSL-TSL/index.html">
 <meta property="og:site_name" content="Wei_John">
-<meta property="og:description" content="爱编程，爱晚起，偶尔也忙到深夜，喜欢学习，努力工作，也享受生活，我酷爱技术，崇尚简单的快乐和幸福，我和你一样，为理想而奋斗。It’s me —— Wei John">
+<meta property="og:description" content="Tomcat 8 SSL/TSL(https证书)配置最近公司要求在测试服务器上配置https访问方式。由于测试服务器，先使用java自签名证书测试一下，之后改成阿里云申请的免费证书，选择jks格式证书，修改keystoreFile、keystorePass即可。配置方法主要参考Tomcat官方文档。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-11-15T08:48:18.066Z">
+<meta property="og:updated_time" content="2017-12-18T07:29:51.324Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="It&#39;s me">
-<meta name="twitter:description" content="爱编程，爱晚起，偶尔也忙到深夜，喜欢学习，努力工作，也享受生活，我酷爱技术，崇尚简单的快乐和幸福，我和你一样，为理想而奋斗。It’s me —— Wei John">
+<meta name="twitter:title" content="Linux Tomcat 8 SSL&#x2F;TSL(https证书)配置">
+<meta name="twitter:description" content="Tomcat 8 SSL/TSL(https证书)配置最近公司要求在测试服务器上配置https访问方式。由于测试服务器，先使用java自签名证书测试一下，之后改成阿里云申请的免费证书，选择jks格式证书，修改keystoreFile、keystorePass即可。配置方法主要参考Tomcat官方文档。">
 
 
 
@@ -119,13 +120,13 @@
 
 
 
-  <link rel="canonical" href="https://weijohn.me/about/"/>
+  <link rel="canonical" href="https://weijohn.me/2017/10/21/Linux-Tomcat-8-SSL-TSL/"/>
 
 
 
 
 
-  <title>It's me | Wei_John</title>
+  <title>Linux Tomcat 8 SSL/TSL(https证书)配置 | Wei_John</title>
   
 
 
@@ -284,33 +285,227 @@
 
   <div id="posts" class="posts-expand">
     
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://weijohn.me/2017/10/21/Linux-Tomcat-8-SSL-TSL/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Wei John">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Wei_John">
+    </span>
+
     
-    
-    <div class="post-block page">
       <header class="post-header">
 
-	<h1 class="post-title" itemprop="name headline">It's me</h1>
-
-
-
-</header>
-
-      
-      
-      
-      <div class="post-body">
         
         
-          <center><br>爱编程，爱晚起，偶尔也忙到深夜，<br>喜欢学习，努力工作，也享受生活，<br>我酷爱技术，崇尚简单的快乐和幸福，<br>我和你一样，为理想而奋斗。<br>It’s me —— Wei John<br></center>
+          <h1 class="post-title" itemprop="name headline">Linux Tomcat 8 SSL/TSL(https证书)配置</h1>
         
-      </div>
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-10-21T20:58:21+08:00">
+                2017-10-21
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/笔记/" itemprop="url" rel="index">
+                    <span itemprop="name">笔记</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
       
       
+
+      
+        <h2 id="Tomcat-8-SSL-TSL-https证书-配置"><a href="#Tomcat-8-SSL-TSL-https证书-配置" class="headerlink" title="Tomcat 8 SSL/TSL(https证书)配置"></a><center>Tomcat 8 SSL/TSL(https证书)配置<center></center></center></h2><p>最近公司要求在测试服务器上配置https访问方式。由于测试服务器，先使用java自签名证书测试一下，之后改成阿里云申请的免费证书，选择jks格式证书，修改keystoreFile、keystorePass即可。配置方法主要<a href="https://tomcat.apache.org/tomcat-8.0-doc/ssl-howto.html#General_Tips_on_Running_SSL" target="_blank" rel="external">参考Tomcat官方文档</a>。</p>
+<a id="more"></a>
+<p>按照官方文档步骤：</p>
+<ul>
+<li>准备证书秘钥</li>
+<li>编辑 Tomcat 配置文件</li>
+<li>疑难排解</li>
+</ul>
+<h2 id="创建一个keystore文件"><a href="#创建一个keystore文件" class="headerlink" title="创建一个keystore文件"></a>创建一个keystore文件</h2><p>先创建一个keystore文件保存服务器的私有密钥和自签名证书。</p>
+<p>Windows：</p>
+<p><code>&quot;%JAVA_HOME%\bin\keytool&quot; -genkey -alias tomcat -keyalg RSA -keystore tomcat.keystore</code></p>
+<p>UNIX：</p>
+<p><code>$JAVA_HOME/bin/keytool -genkey -alias tomcat -keyalg RSA -keystore tomcat.keystore</code></p>
+<ul>
+<li>设置密码为“changeit”</li>
+</ul>
+<p>windows命令将在user目录下创建一个.keystore后缀的文件。要想指定一个不同的位置或文件名，可以在上述的 keytool 命令上添加 -keystore 参数，后跟到达 keystore 文件的完整路径名。</p>
+<p>linux下，测试服务器上配置的环境，所以使用keytool -genkey -alias tomcat -keyalg RSA -keystore tomcat.keystore,在当前目录下生产自签名文件</p>
+<h2 id="编辑配置-Tomcat"><a href="#编辑配置-Tomcat" class="headerlink" title="编辑配置 Tomcat"></a>编辑配置 Tomcat</h2><p>Tomcat 能够使用两种 SSL 实现：</p>
+<ul>
+<li>JSSE 实现，它是Java 运行时（从 1.4 版本起）的一部分。</li>
+<li>APR 实现，默认使用 OpenSSL 引擎。</li>
+</ul>
+<p>这里我们选用JSSE实现。接下来我们开始修改配置文件</p>
+<ul>
+<li><p>进入Tomcata主目录</p>
+<pre><code>cd /home/test/apache-tomcat-8.0.44
+</code></pre></li>
+<li><p>编辑配置文件server.xml</p>
+<pre><code>vi conf/server.xml
+</code></pre></li>
+</ul>
+<p>由于8.0.44是Tomcat 8的最新版本，配置文件发生了一些改变，老版本只要打开注释，新版本似乎不建议这样配置了，但是没关系，我们依然可以选择在</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">&lt;!-- Define a SSL/TLS HTTP/1.1 Connector on port 8443</div><div class="line">                This connector uses the NIO implementation that requires the JSSE</div><div class="line">                style configuration. When using the APR/native implementation, the</div><div class="line">                OpenSSL style configuration is required as described in the APR/native</div><div class="line">                documentation --&gt;</div></pre></td></tr></table></figure>
+<p>下面添加<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">&lt;Connector</div><div class="line">        protocol=&quot;org.apache.coyote.http11.Http11NioProtocol&quot;</div><div class="line">        port=&quot;8443&quot; maxThreads=&quot;200&quot;</div><div class="line">        scheme=&quot;https&quot; secure=&quot;true&quot; SSLEnabled=&quot;true&quot;</div><div class="line">        keystoreFile=&quot;$&#123;user.home&#125;/.keystore&quot; keystorePass=&quot;changeit&quot;</div><div class="line">        clientAuth=&quot;false&quot; sslProtocol=&quot;TLS&quot;/&gt;</div></pre></td></tr></table></figure></p>
+<p>keystoreFile为签名文件位置，keystorePass为签名密码。<br>每个属性所用的配置信息与选项都是强制的，可查看 HTTP 连接器配置参考文档中的 SSL 支持部分。一定要确保对所使用的连接器采用正确的属性。BIO、NIO 以及 NIO2 连接器都使用 JSSE，可以在protocol属性选择使用哪一个，而APR以及原生的连接器则使用 APR。<br>BIO、NIO 以及 NIO2 可参考一下文档：<br><a href="http://blog.sina.com.cn/s/blog_aed82f6f010194ky.html" target="_blank" rel="external">http://blog.sina.com.cn/s/blog_aed82f6f010194ky.html</a><br><a href="https://www.ibm.com/developerworks/cn/java/j-nio2-1" target="_blank" rel="external">https://www.ibm.com/developerworks/cn/java/j-nio2-1</a></p>
+<p>port属性指的是 Tomcat 用以侦听安全连接的 TCP/IP 端口号。你可以随意改变它，比如改成 https 的默认端口号 443。</p>
+<p>测试服务器占用端口比较多，我选用了10080和10443作为http和https的端口。</p>
+<h2 id="疑难排解"><a href="#疑难排解" class="headerlink" title="疑难排解"></a>疑难排解</h2><p>按照官方文档，按理来说应该可以正常启动运行。但是实际情况，使用https访问异常。DOC文档说，sslProtocol和sslEnabledProtocols有重叠，但是两个仍然必须设置，否则会有异常。</p>
+<p>org.apache.tomcat.util.net.Nio2Endpoint.setSocketOptions </p>
+<p>javax.net.ssl.SSLHandshakeException: No appropriate protocol</p>
+<p><a href="http://tomcat.apache.org/tomcat-8.0-doc/config/http.html#SSL_Support" target="_blank" rel="external">查阅文档</a></p>
+<p>选择支持TLSv1,TLSv1.1,TLSv1.2 [Java 7开始支持TLSv1.2]<br>添加参数sslEnabledProtocols和ciphers。选择TLS RSA加密方式。<br>！注意java 8的改变，具体参考上方文档。</p>
+<hr>
+<h2 id="最终配置"><a href="#最终配置" class="headerlink" title="最终配置"></a>最终配置</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line">&lt;Connector port=&quot;10443&quot; protocol=&quot;org.apache.coyote.http11.Http11Nio2Protocol&quot;</div><div class="line">       maxThreads=&quot;200&quot; SSLEnabled=&quot;true&quot; scheme=&quot;https&quot;</div><div class="line">       secure=&quot;true&quot; clientAuth=&quot;false&quot; sslProtocol=&quot;TLS&quot;</div><div class="line">       sslEnabledProtocols=&quot;TLSv1,TLSv1.1,TLSv1.2&quot;</div><div class="line">       keystoreFile=&quot;tomcat.keystore&quot; keystorePass=&quot;changeit&quot;</div><div class="line">       ciphers=&quot;TLS_RSA_WITH_AES_128_CBC_SHA,</div><div class="line">                TLS_RSA_WITH_AES_256_CBC_SHA,</div><div class="line">                TLS_RSA_EXPORT1024_WITH_RC4_56_MD5,</div><div class="line">                TLS_RSA_WITH_AES_128_CBC_SHA256,</div><div class="line">                TLS_RSA_WITH_AES_256_CBC_SHA256,</div><div class="line">                TLS_RSA_WITH_RC4_128_MD5,</div><div class="line">                TLS_RSA_WITH_RC4_128_SHA,</div><div class="line">                TLS_RSA_WITH_DES_CBC_SHA,</div><div class="line">                TLS_RSA_WITH_3DES_EDE_CBC_SHA,</div><div class="line">                TLS_RSA_EXPORT1024_WITH_DES_CBC_SHA&quot;/&gt;</div></pre></td></tr></table></figure>
       
     </div>
     
     
     
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Linux/" rel="tag"># Linux</a>
+          
+            <a href="/tags/Tomcat/" rel="tag"># Tomcat</a>
+          
+            <a href="/tags/SSL/" rel="tag"># SSL</a>
+          
+            <a href="/tags/TSL/" rel="tag"># TSL</a>
+          
+            <a href="/tags/HTTPS/" rel="tag"># HTTPS</a>
+          
+            <a href="/tags/签名/" rel="tag"># 签名</a>
+          
+            <a href="/tags/证书/" rel="tag"># 证书</a>
+          
+            <a href="/tags/秘钥/" rel="tag"># 秘钥</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/10/21/Hello Hexo/" rel="next" title="Hello Hexo | 小记博客迁移">
+                <i class="fa fa-chevron-left"></i> Hello Hexo | 小记博客迁移
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/10/21/Douyu-Cleaner/" rel="prev" title="Douyu Cleaner 清爽斗鱼">
+                Douyu Cleaner 清爽斗鱼 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
   </div>
 
 
@@ -319,6 +514,10 @@
 
 
           
+
+  
+
+
 
         </div>
         
@@ -339,8 +538,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -427,6 +635,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Tomcat-8-SSL-TSL-https证书-配置"><span class="nav-number">1.</span> <span class="nav-text">Tomcat 8 SSL/TSL(https证书)配置</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#创建一个keystore文件"><span class="nav-number">2.</span> <span class="nav-text">创建一个keystore文件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#编辑配置-Tomcat"><span class="nav-number">3.</span> <span class="nav-text">编辑配置 Tomcat</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#疑难排解"><span class="nav-number">4.</span> <span class="nav-text">疑难排解</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#最终配置"><span class="nav-number">5.</span> <span class="nav-text">最终配置</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       

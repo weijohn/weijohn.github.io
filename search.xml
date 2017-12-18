@@ -2,7 +2,7 @@
 <search>
   <entry>
     <title><![CDATA[Douyu Cleaner 清爽斗鱼]]></title>
-    <url>%2F2017%2F11%2F15%2FDouyu-Cleaner%2F</url>
+    <url>%2F2017%2F10%2F21%2FDouyu-Cleaner%2F</url>
     <content type="text"><![CDATA[专注直播内容，还你清爽页面 2014年08月26日，亚马逊周一宣布，该公司已同游戏视频网站Twitch签订协议，将以约9.7亿美元的现金收购Twitch。 自从2014年亚马逊收购Twitch引爆视频直播市场，现在已经到了全民直播的时代，而斗鱼是其中的领跑者之一。我作为斗鱼较早的一批观众，慢慢的发现斗鱼加入了眼花缭乱的打赏，广告，聊天区各种勋章，后来又加入了许多贵族粉丝等玩法，让我等屌丝迷失在土豪的打赏海洋中，无法更好的专注与直播内容和弹幕。于是本着更好的直播观看体验，我开始编写本CSS，此CSS已发布于userstyles.org，支持js安装。 userstyle：Douyu Cleaner 清爽斗鱼 JS安装地址：Install style as userscript 主要功能 去除了直播页面一些广告/首页也进行了部分调整 直播页面去除左抽屉菜单,仅保留主播信息、视频、聊天、礼物 调整了布局,直播间主播信息,礼物区,聊天区等 少许美化 / 滚动条美化 / 圆角显示 / 圆形主播头像 等 精简聊天区图标/清除粉丝、贵族聊天的特殊背景等 修改部分全部有注释,可自行修改 作者有话说 主要针对1080P,v2.6以上加入针对小屏优化 基于 Chrome 50+进行编写,配合ABP或uBlock 如果遇到问题，请尝试重新安装本样式 主要针对登陆后的斗鱼,不登陆时有些细节未调整!!! 更新历史—- 2017年11月15日 —-[**]斗鱼样式更新，同步调整 —- 2017年11月07日 —-[**] 由于最近直播间信息一栏增加了很多内容，所以调整了布局，并加入针对不同分辨率响应布局 —- 2017年10月16日 —-[#] 增加屏蔽头像提醒小圆点选项[#] 适配新聊天区样式[#] 修复直播间标题栏样式 —- 2017年09月03日 —-[#] 修复抢飞机宝箱验证码偏移出屏幕的问题 —- 2017年08月24日 —-[#] 修复显示表情[+] 增加屏蔽办卡粉丝等级的选项[?] 已知问题抢飞机宝箱验证码偏移 —- 2017年07月27日 —-[#] 修复js安装问题 —- 2017年06月15日 —-[+] 清除粉丝、贵族聊天的特殊背景[+] 屏蔽聊天输入框首充徽章[+] 屏蔽了聊天区域多余图标，聊天更清爽[#] 修复使用JS安装网页全屏兼容问题 —- 2017年05月30日 —-[+] 增加屏蔽主播任务的选项[#] 修复使用JS安装导致的一些兼容问题[+] 增加屏蔽列表游戏广告 —- 2017年04月26日 —-[+] 增加屏蔽聊天区礼物图标选项[#] 精简代码中过期活动项 —- 2017年04月15日 —-[+] 屏蔽聊天区广告 —- 2017年04月08日 —-[+] 屏蔽xx提醒[+] 屏蔽聊天框粉丝徽章 —- 2017年01月09日 —-[+] 增加Style Settings (Optional) —- 2017年01月07日 —-[+] 滚动条美化[+] 聊天输入框高度更改为一行(输入字数就限制这么多,显示更多弹幕) —- 2017年01月03日 —-[#] 重构css[+] 使用圆形主播头像 ——– 2016年 ——–[+] 屏蔽举报按钮[+] 精简聊天区图标[+] 屏蔽鱼翅和充值图标[+] 屏蔽竞猜\店铺\活动等[+] 屏蔽个人中心我的任务[+] 屏蔽历史和关注的广告条[+] 屏蔽领1000鱼丸的任务提示[+] 屏蔽关注提醒/微博分享提醒[+] 屏蔽直播间视频区域的主播商品推荐[#] 调整关注按钮[#] 礼物区图标大小调整[#] 竞猜\店铺\活动图标调整[#] 聊天区半全屏时位置调整[#] 屏蔽斗鱼主播的店铺按钮[#] 修复聊天列表高度问题,屏蔽殷勤榜[#] 特殊直播间如VGtime和花漾大爬梯调整[#] 其他一些调整]]></content>
       <categories>
         <category>项目</category>
@@ -13,6 +13,24 @@
         <tag>js</tag>
         <tag>douyu cleaner</tag>
         <tag>清爽斗鱼</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[Linux Tomcat 8 SSL/TSL(https证书)配置]]></title>
+    <url>%2F2017%2F10%2F21%2FLinux-Tomcat-8-SSL-TSL%2F</url>
+    <content type="text"><![CDATA[Tomcat 8 SSL/TSL(https证书)配置最近公司要求在测试服务器上配置https访问方式。由于测试服务器，先使用java自签名证书测试一下，之后改成阿里云申请的免费证书，选择jks格式证书，修改keystoreFile、keystorePass即可。配置方法主要参考Tomcat官方文档。 按照官方文档步骤： 准备证书秘钥 编辑 Tomcat 配置文件 疑难排解 创建一个keystore文件先创建一个keystore文件保存服务器的私有密钥和自签名证书。 Windows： &quot;%JAVA_HOME%\bin\keytool&quot; -genkey -alias tomcat -keyalg RSA -keystore tomcat.keystore UNIX： $JAVA_HOME/bin/keytool -genkey -alias tomcat -keyalg RSA -keystore tomcat.keystore 设置密码为“changeit” windows命令将在user目录下创建一个.keystore后缀的文件。要想指定一个不同的位置或文件名，可以在上述的 keytool 命令上添加 -keystore 参数，后跟到达 keystore 文件的完整路径名。 linux下，测试服务器上配置的环境，所以使用keytool -genkey -alias tomcat -keyalg RSA -keystore tomcat.keystore,在当前目录下生产自签名文件 编辑配置 TomcatTomcat 能够使用两种 SSL 实现： JSSE 实现，它是Java 运行时（从 1.4 版本起）的一部分。 APR 实现，默认使用 OpenSSL 引擎。 这里我们选用JSSE实现。接下来我们开始修改配置文件 进入Tomcata主目录 cd /home/test/apache-tomcat-8.0.44 编辑配置文件server.xml vi conf/server.xml 由于8.0.44是Tomcat 8的最新版本，配置文件发生了一些改变，老版本只要打开注释，新版本似乎不建议这样配置了，但是没关系，我们依然可以选择在 12345&lt;!-- Define a SSL/TLS HTTP/1.1 Connector on port 8443 This connector uses the NIO implementation that requires the JSSE style configuration. When using the APR/native implementation, the OpenSSL style configuration is required as described in the APR/native documentation --&gt; 下面添加123456&lt;Connector protocol=&quot;org.apache.coyote.http11.Http11NioProtocol&quot; port=&quot;8443&quot; maxThreads=&quot;200&quot; scheme=&quot;https&quot; secure=&quot;true&quot; SSLEnabled=&quot;true&quot; keystoreFile=&quot;$&#123;user.home&#125;/.keystore&quot; keystorePass=&quot;changeit&quot; clientAuth=&quot;false&quot; sslProtocol=&quot;TLS&quot;/&gt; keystoreFile为签名文件位置，keystorePass为签名密码。每个属性所用的配置信息与选项都是强制的，可查看 HTTP 连接器配置参考文档中的 SSL 支持部分。一定要确保对所使用的连接器采用正确的属性。BIO、NIO 以及 NIO2 连接器都使用 JSSE，可以在protocol属性选择使用哪一个，而APR以及原生的连接器则使用 APR。BIO、NIO 以及 NIO2 可参考一下文档：http://blog.sina.com.cn/s/blog_aed82f6f010194ky.htmlhttps://www.ibm.com/developerworks/cn/java/j-nio2-1 port属性指的是 Tomcat 用以侦听安全连接的 TCP/IP 端口号。你可以随意改变它，比如改成 https 的默认端口号 443。 测试服务器占用端口比较多，我选用了10080和10443作为http和https的端口。 疑难排解按照官方文档，按理来说应该可以正常启动运行。但是实际情况，使用https访问异常。DOC文档说，sslProtocol和sslEnabledProtocols有重叠，但是两个仍然必须设置，否则会有异常。 org.apache.tomcat.util.net.Nio2Endpoint.setSocketOptions javax.net.ssl.SSLHandshakeException: No appropriate protocol 查阅文档 选择支持TLSv1,TLSv1.1,TLSv1.2 [Java 7开始支持TLSv1.2]添加参数sslEnabledProtocols和ciphers。选择TLS RSA加密方式。！注意java 8的改变，具体参考上方文档。 最终配置123456789101112131415&lt;Connector port=&quot;10443&quot; protocol=&quot;org.apache.coyote.http11.Http11Nio2Protocol&quot; maxThreads=&quot;200&quot; SSLEnabled=&quot;true&quot; scheme=&quot;https&quot; secure=&quot;true&quot; clientAuth=&quot;false&quot; sslProtocol=&quot;TLS&quot; sslEnabledProtocols=&quot;TLSv1,TLSv1.1,TLSv1.2&quot; keystoreFile=&quot;tomcat.keystore&quot; keystorePass=&quot;changeit&quot; ciphers=&quot;TLS_RSA_WITH_AES_128_CBC_SHA, TLS_RSA_WITH_AES_256_CBC_SHA, TLS_RSA_EXPORT1024_WITH_RC4_56_MD5, TLS_RSA_WITH_AES_128_CBC_SHA256, TLS_RSA_WITH_AES_256_CBC_SHA256, TLS_RSA_WITH_RC4_128_MD5, TLS_RSA_WITH_RC4_128_SHA, TLS_RSA_WITH_DES_CBC_SHA, TLS_RSA_WITH_3DES_EDE_CBC_SHA, TLS_RSA_EXPORT1024_WITH_DES_CBC_SHA&quot;/&gt;]]></content>
+      <categories>
+        <category>笔记</category>
+      </categories>
+      <tags>
+        <tag>Linux</tag>
+        <tag>Tomcat</tag>
+        <tag>SSL</tag>
+        <tag>TSL</tag>
+        <tag>HTTPS</tag>
+        <tag>签名</tag>
+        <tag>证书</tag>
+        <tag>秘钥</tag>
       </tags>
   </entry>
   <entry>
